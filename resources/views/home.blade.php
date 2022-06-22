@@ -8,6 +8,23 @@
     <title>Homepage</title>
 </head>
 <body>
-    <h1>Hello world!</h1>
+    <h1>
+        @if ($time>=5 AND $time<13)
+            <span>Good Morning,</span>
+        @elseif ($time>=13 AND $time<18)
+            <span>Good Afternoon,</span>
+        @elseif ($time>=18 AND $time<24)
+            <span>Good Evening,</span>
+        @elseif ($time>=0 AND $time<5)
+            <span>Good Night,</span>
+        @endif
+        <span>{{$name}}!</span>
+    </h1>
+    <h5 class="mt-4">Here there are your votes!</h5>
+    <ul>
+        @foreach ($votes as $vote)
+            <li>{{$vote}}</li>
+        @endforeach
+    </ul>
 </body>
 </html>
