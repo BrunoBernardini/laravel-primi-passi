@@ -20,6 +20,14 @@ Route::get('/', function () {
         "votes"=>[7,6,8,6,9,8]
     ];
     return view('home', $data);
-})->name("Home");
+})->name("home");
+
+Route::get("/about", function(){
+    return view("about");
+})->name("about");
+
+Route::get("/donate", function(){
+    return view("donate");
+})->name("donate");
 
 
